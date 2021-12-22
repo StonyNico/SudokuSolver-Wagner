@@ -29,7 +29,7 @@ namespace SudokuSolver {
         public override string ToString()
         {
 
-            for (int i = 0; i < size -1; i++)
+            for (int i = 0; i < size; i++)
             {
                // Console.WriteLine(board[i,0]);
                 for (int j = 0; j < size; j++)
