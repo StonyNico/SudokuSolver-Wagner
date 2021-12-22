@@ -16,6 +16,7 @@ namespace SudokuSolver {
 
     public SudokuBoard(int?[,] numbers) : this() {
       for (int i = 0; i < size; i++) {
+
         for (int j = 0; j < size; j++) {
           int n = numbers[i, j].GetValueOrDefault();
           if ((n > 0) && (n <= size)) {
@@ -25,8 +26,24 @@ namespace SudokuSolver {
         }
       }
     }
+        public override string ToString()
+        {
 
-    public void SetNumber(int i, int j, int number, bool fixedNumber = false) {
+            for (int i = 0; i < size -1; i++)
+            {
+               // Console.WriteLine(board[i,0]);
+                for (int j = 0; j < size; j++)
+                {
+                    
+                    Console.Write(board[i, j]);
+                }
+                Console.WriteLine();
+            }
+
+            return base.ToString();
+        }
+
+        public void SetNumber(int i, int j, int number, bool fixedNumber = false) {
       board[i, j] = number;
       fixedNumbers[i, j] = fixedNumber;
     }
